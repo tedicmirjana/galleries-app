@@ -42,7 +42,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     handleRefreshToken();
-  }, []);
+  }, [ ] );
 
   return (
     <AuthContext.Provider
