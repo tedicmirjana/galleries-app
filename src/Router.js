@@ -5,9 +5,10 @@ import useAuth from "./hooks/useAuth";
 
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import Galleries from "./pages/Galleries";
-import AddGallery from "./pages/AddGalleries";
+// import Galleries from "./pages/Galleries";
+// import AddGallery from "./pages/AddGalleries";
 
+export default function Router(){
 
 const AuthRoute = ({ children, ...rest }) => {
     const { user } = useAuth();
@@ -18,31 +19,31 @@ const GuestRoute = ({ children, ...rest }) => {
     return <Route {...rest}>{user ? <Redirect to='/galleries' /> : children}</Route>;
 }
 
-function Router() {
+
     return (
         <div className="App">
             <Switch>
-                <AuthRoute path='/' exact>
+                {/* <AuthRoute path='/' exact>
                     <Redirect to='/login'></Redirect>
-                </AuthRoute>
-                <AuthRoute path='/galleries' exact>
+                </AuthRoute> */}
+                {/* <AuthRoute path='/galleries' exact>
                     <AppGallery />
-                </AuthRoute>
-                <AuthRoute path='/galleries/:id'>
+                </AuthRoute> */}
+                {/* <AuthRoute path='/galleries/:id'>
                     <SingleCarPage />
-                </AuthRoute>
-                <AuthRoute path='/add'>
+                </AuthRoute> */}
+                {/* <AuthRoute path='/add'>
                     <AddGallery />
-                </AuthRoute>
+                </AuthRoute> */}
                 {/* <AuthRoute exact path='/edit/:id'>
                     <AddCar />
                 </AuthRoute> */}
-                <GuestRoute path='/login' exact>
-                    <Login />
-                </GuestRoute>
-                <GuestRoute path='/register' exact>
-                    <Register />
-                </GuestRoute>
+                <AuthRoute path='/login' exact>
+                    <LoginPage />
+                </AuthRoute>
+                <AuthRoute path='/register' exact>
+                    <RegisterPage />
+                </AuthRoute>
             </Switch>
         </div>
     );

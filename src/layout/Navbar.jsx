@@ -8,16 +8,16 @@ export default function Navbar() {
   return (
     <nav>
       <ul>
-        {!user.name && (
+        {/* {!user.name && ( */}
           <li>
             <Link to="/login">Login</Link>
           </li>
-        )}
-        {!user.name && (
+        {/* )} */}
+        {/* {!user.name && ( */}
           <li>
             <Link to="/register">Register</Link>
           </li>
-        )}
+        {/* )} */}
         <li>
           <Link to="/galleries">Galleries</Link>
         </li>

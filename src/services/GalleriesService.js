@@ -10,7 +10,7 @@ class GalleriesService {
 
     async add(newCar) {
         try {
-            const { data } = await httpService.axiosInstance.post('galleries', newGalleries);
+            const { data } = await httpService.axiosInstance.post('galleries', newGallery);
             return data;
         } catch (error) {
             console.log(error);

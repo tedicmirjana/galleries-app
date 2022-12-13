@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 
 
-export default function AppRegister({
+export default function RegisterComponent({
     handleOnRegister,
     newUser,
     setNewUser,
@@ -21,7 +21,6 @@ export default function AppRegister({
     };
 
  
-
     const handleUnmatchedPasswords = (e) => {
         e.preventDefault()
         alert('Passwords do not match');
@@ -32,12 +31,19 @@ export default function AppRegister({
             <form  onSubmit={
                 passwordConfirmed ? handleOnRegister : handleUnmatchedPasswords
             }>
-                <label htmlFor="name">Name:</label>
+                <label htmlFor="first_name">First Name:</label>
                 <input 
                     required
                     type="text"
-                    value={newUser.name}
-                    onChange={({ target }) => setNewUser({ ...newUser, name: target.value })}
+                    value={newUser.first_name}
+                    onChange={({ target }) => setNewUser({ ...newUser, first_name: target.value })}
+                />
+                <label htmlFor="last_name">Last Name:</label>
+                <input 
+                    required
+                    type="text"
+                    value={newUser.last_name}
+                    onChange={({ target }) => setNewUser({ ...newUser, last_name: target.value })}
                 />
                 <label htmlFor="email">Email:</label>
                 <input 
@@ -60,8 +66,9 @@ export default function AppRegister({
                     required
                     type="password"
                     value={confirmPassword.confirmPassword}
-                    onChange={({ target }) =>
-                        setConfirmPassword(target.value)
+                    onChange={({ target }) =>{
+                        setNewUser({...newUser, password_confirmation: target.value})
+                        setConfirmPassword(target.value)}
                     }
                 />
                 <button type="submit">Register</button>

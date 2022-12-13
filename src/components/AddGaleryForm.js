@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./AddCar.module.css";
+import classes from "./AddGallery.module.css";
 
-export default function AddCarForm({
+export default function AddGalleryForm({
     newCar,
     setNewCar,
     onChange,

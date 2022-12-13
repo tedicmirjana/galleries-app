@@ -6,10 +6,8 @@ export default function DefaultLayout({ children }) {
     const { user } = useAuth();
   return (
     <div> 
-      <div>
         <Navbar />
-      </div>
-      <div>{children}</div>
+      <main>{children}</main>
       <footer>{user && user.name}</footer>
     </div>
   );
