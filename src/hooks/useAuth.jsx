@@ -6,7 +6,7 @@ const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
   const history = useHistory();
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({name: 'Mirjana'});
 
   const handleLogin = async (data) => {
     const response = await authService.login(data);
